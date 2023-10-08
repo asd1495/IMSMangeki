@@ -1,4 +1,5 @@
 ﻿using IMS.CoreBusiness;
+using IMS.UseCases.PluginInterfaces;
 
 namespace IMS.UseCases
 {
@@ -12,7 +13,7 @@ namespace IMS.UseCases
         }
         public async Task<IEnumerable<Inventory>> ExecuteAsync(string name)
         {
-
+            return await this.inventoryRepository.GetInventoriesByName(name);
         }
     }
 }
